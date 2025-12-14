@@ -1,16 +1,20 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Expose } from 'class-transformer';
 
-export class User {
+export class UserDto {
   @ApiProperty({ example: 1, description: 'Уникальный идентификатор' })
-  ID: number;
+  @Expose()
+  ID?: number;
 
   @ApiProperty({ description: 'UserLogin' })
-  UserLogin: string;
+  @Expose()
+  userLogin?: string;
 
   @ApiProperty({ description: 'UserName' })
-  UserName: string;
+  @Expose()
+  userName?: string;
 
-  constructor(partial: Partial<User>) {
+  constructor(partial: Partial<UserDto>) {
     Object.assign(this, partial);
   }
 }

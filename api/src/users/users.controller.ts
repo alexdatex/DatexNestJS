@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UsersService } from './users.service';
-import { User } from '../models/entities/user.entity';
+import { UserDto } from '../models/dto/user.dto';
 
 @ApiTags('user')
 @Controller('users')
@@ -12,7 +12,7 @@ export class UsersController {
   @Get()
   @ApiResponse({
     description: 'Список всех приветствий',
-    type: User,
+    type: UserDto,
     isArray: true,
   })
   async getAll() {

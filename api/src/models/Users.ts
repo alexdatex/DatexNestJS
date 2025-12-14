@@ -1,19 +1,19 @@
 import { Model, Table, Column, DataType } from 'sequelize-typescript';
 
 export interface UsersAttributes {
-  Id?: number;
+  id?: number;
   Organization1Id?: number;
   Organization2Id?: number;
   DefaultRightsId?: number;
   RankId?: number;
-  UserName?: string;
+  userName?: string;
   Date?: Date;
   UserType?: string;
   GlobalRightsCu?: number;
   GlobalRightsSr?: number;
   GlobalRightsUa?: number;
   GlobalRightsNp?: number;
-  UserLogin?: string;
+  userLogin?: string;
   UserPhoto?: Uint8Array;
   EMail?: string;
   Phone?: string;
@@ -40,7 +40,7 @@ export class Users
     type: DataType.INTEGER,
     comment: 'ID пользователя системы',
   })
-  Id?: number;
+  ID?: number;
 
   @Column({
     field: 'Organization1ID',
@@ -79,12 +79,13 @@ export class Users
   RankId?: number;
 
   @Column({
+    field: 'UserName',
     allowNull: true,
     type: DataType.STRING(50),
     comment: 'Имя/фамилия пользователя',
     defaultValue: "''",
   })
-  UserName?: string;
+  userName?: string;
 
   @Column({
     allowNull: true,
@@ -140,12 +141,13 @@ export class Users
   GlobalRightsNp?: number;
 
   @Column({
+    field: 'UserLogin',
     allowNull: true,
     type: DataType.STRING(16),
     comment: 'Login как в учетной записи MySQL',
     defaultValue: 'NULL',
   })
-  UserLogin?: string;
+  userLogin?: string;
 
   @Column({
     allowNull: true,
