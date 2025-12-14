@@ -1,6 +1,6 @@
 # Nestjs specific
 /dist
-/node_modules
+node_modules
 /build
 /tmp
 
@@ -23,3 +23,6 @@ lerna-debug.log*
 .temp
 .tmp
 .idea
+.prettierrc
+/api/package-lock.json
+/package-lock.json
